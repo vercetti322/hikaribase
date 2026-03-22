@@ -1,6 +1,7 @@
 package com.app.hikaribase.config;
 
 public class QueryConstants {
+    private QueryConstants() {}
     public static final String CREATE_LLM_CREDENTIALS_TABLE
             = """
             CREATE TABLE IF NOT EXISTS llm_credentials (
