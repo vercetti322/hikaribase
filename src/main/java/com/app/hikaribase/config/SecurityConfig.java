@@ -18,9 +18,12 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth
-                        -> auth.requestMatchers("/api/token").permitAll()
+                        -> auth.requestMatchers(ApiConstants.SECURITY_AUTH_EXCLUDE_LIST
+                                .toArray(String[]::new)).permitAll()
                         .anyRequest().authenticated()
-                ).addFilterBefore(tokenFilter, UsernamePasswordAuthenticationFilter.class);
+                ).addFilterBefore(
+                        tokenFilter, UsernamePasswordAuthenticationFilter.class
+                );
 
         return http.build();
     }

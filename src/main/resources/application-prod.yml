@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: "hikaribase"
+  ai:
+    model:
+      chat: none # disable auto-configured chat provider
+    chat:
+      client:
+        enabled: false # disable ChatClient bean auto-creation
+  datasource:
+    url: "jdbc:sqlite:./data/app.db"
+    driver-class-name: org.sqlite.JDBC
+
+spring doc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false

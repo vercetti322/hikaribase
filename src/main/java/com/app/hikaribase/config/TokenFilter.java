@@ -23,8 +23,11 @@ public class TokenFilter extends OncePerRequestFilter {
             @NonNull HttpServletRequest request, @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
-        // allow token endpoint without auth
-        if (request.getRequestURI().equals("/api/token")) {
+        // allow token & api doc endpoints without auth
+        boolean isExcluded = ApiConstants.FILTER_AUTH_EXCLUDE_LIST.stream()
+                .anyMatch(request.getRequestURI()::startsWith);
+
+        if (isExcluded) {
             filterChain.doFilter(request, response);
             return;
         }
