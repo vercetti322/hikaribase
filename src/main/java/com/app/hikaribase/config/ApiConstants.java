@@ -12,6 +12,11 @@ public class ApiConstants {
     public static final String V3_API_DOCS_PATHS = "/v3/api-docs/**";
     public static final String SWAGGER_UI_PATH = "/swagger-ui";
     public static final String SWAGGER_UI_PATHS = "/swagger-ui/**";
+    public static final String JDBC_MYSQL_PREFIX = "jdbc:mysql://";
+    public static final String DEFAULT_MYSQL_DB = "mysql";
+    public static final int TEST_CONNECTION_TIMEOUT = 10;
+    public static final String CONNECTION_TEST_FAILED_MESSAGE = "Could not connect " +
+            "to the server, please check your server details again";
     public static final List<String> FILTER_AUTH_EXCLUDE_LIST = List.of(
             TOKEN_PATH, V3_API_DOCS_PATH, SWAGGER_UI_PATH
     );

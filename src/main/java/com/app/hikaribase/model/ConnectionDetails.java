@@ -7,4 +7,6 @@ public class ConnectionDetails {
     private Integer port;
     private String username;
     private String encryptedPassword;
+    public String createdTimeStamp;
+    public String updatedTimeStamp;
 }

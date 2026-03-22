@@ -18,5 +18,10 @@ public class QueryConstants {
                 port INTEGER NOT NULL,
                 username TEXT NOT NULL,
                 encrypted_password TEXT NOT NULL
+                created_time_stamp TEXT NOT NULL
+                updated_time_stamp TEXT
             )""";
+    public static final String TEST_MYSQL_CONNECTION = "SELECT 1";
+    public static final String INSERT_CONNECTION_DETAILS
+            = "";
 }
