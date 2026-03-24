@@ -36,10 +36,9 @@ public class TokenFilter extends OncePerRequestFilter {
         if (header == null || !header.equals(
                 ApiConstants.BEARER_KEY + tokenService.getToken()
         )) {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
             return;
         }
-
         filterChain.doFilter(request, response);
     }
 }

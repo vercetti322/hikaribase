@@ -4,5 +4,5 @@ import com.app.hikaribase.model.ConnectionDetails;
 
 public interface ConnectionRepository {
 
-    void save(ConnectionDetails details);
+    int save(ConnectionDetails details);
 }

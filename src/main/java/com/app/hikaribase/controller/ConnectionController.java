@@ -1,6 +1,6 @@
 package com.app.hikaribase.controller;
 
-import com.app.hikaribase.dto.request.ConnectionRequest;
+import com.app.hikaribase.dto.request.ConnectionCreateRequest;
 import com.app.hikaribase.dto.response.ConnectionResponse;
 import com.app.hikaribase.service.ConnectionService;
 import jakarta.validation.Valid;
@@ -23,7 +23,7 @@ public class ConnectionController {
 
     @PostMapping
     public ResponseEntity<ConnectionResponse> createConnection(
-            @Valid @RequestBody ConnectionRequest request
+            @Valid @RequestBody ConnectionCreateRequest request
     ) {
         var response = service.createConnection(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);

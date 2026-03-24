@@ -15,5 +15,4 @@ public class ConnectionResponse {
     private String host;
     private Integer port;
     private String username;
-    private String createdTimeStamp;
 }

@@ -10,6 +10,9 @@ spring:
   datasource:
     url: "jdbc:sqlite:./data/app.db"
     driver-class-name: org.sqlite.JDBC
+  config:
+    import:
+      - 'classpath:secrets.properties'
 
 spring doc:
   api-docs:

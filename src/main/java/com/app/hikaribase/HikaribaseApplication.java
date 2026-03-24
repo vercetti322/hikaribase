@@ -2,10 +2,10 @@ package com.app.hikaribase;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 @SpringBootApplication
-@PropertySource("classpath:secrets.properties")
+@ConfigurationPropertiesScan
 public class HikaribaseApplication {
 
 	public static void main(String[] args) {

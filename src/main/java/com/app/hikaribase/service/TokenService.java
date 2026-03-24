@@ -8,6 +8,5 @@ import java.util.UUID;
 @Getter
 @Service
 public class TokenService {
-
     private final String token = UUID.randomUUID().toString();
 }

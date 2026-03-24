@@ -9,12 +9,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ConnectionRequest {
+public class ConnectionCreateRequest {
 
     @NotBlank(message = "name cannot be blank")
     private String name;
 
-    @NotBlank(message = "name cannot be blank")
+    @NotBlank(message = "host cannot be blank")
     private String host;
 
     @NotNull(message = "port cannot be null")

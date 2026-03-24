@@ -23,4 +23,11 @@ public class ApiConstants {
     public static final List<String> SECURITY_AUTH_EXCLUDE_LIST = List.of(
             TOKEN_PATH, V3_API_DOCS_PATHS, SWAGGER_UI_PATHS
     );
+    public static final String NAME = "name";
+    public static final String HOST = "host";
+    public static final String PORT = "port";
+    public static final String USERNAME = "username";
+    public static final String ENCRYPTED_PASSWORD = "encrypted_password";
+    public static final String CREATED_TIMESTAMP = "created_time_stamp";
+    public static final String UNIQUE = "UNIQUE";
 }

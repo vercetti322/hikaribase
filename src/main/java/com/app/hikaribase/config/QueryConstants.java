@@ -13,15 +13,24 @@ public class QueryConstants {
             = """
             CREATE TABLE IF NOT EXISTS connection_details (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
+                name TEXT NOT NULL UNIQUE,
                 host TEXT NOT NULL,
                 port INTEGER NOT NULL,
                 username TEXT NOT NULL,
-                encrypted_password TEXT NOT NULL
-                created_time_stamp TEXT NOT NULL
-                updated_time_stamp TEXT
+                encrypted_password TEXT NOT NULL,
+                created_time_stamp TEXT NOT NULL,
+                updated_time_stamp TEXT,
+                UNIQUE (host, port, username)
             )""";
     public static final String TEST_MYSQL_CONNECTION = "SELECT 1";
     public static final String INSERT_CONNECTION_DETAILS
-            = "";
+            = """
+            INSERT INTO connection_details (
+                name, host, port,
+                username, encrypted_password,
+                created_time_stamp, updated_time_stamp
+            ) VALUES (
+                :name, :host, :port, :username,
+                :encrypted_password, :created_time_stamp, NULL
+            )""";
 }
